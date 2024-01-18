@@ -44,6 +44,8 @@ kotlin {
     sourceSets {
         val desktopMain by getting
         
+        val wasmJsMain by getting
+
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
@@ -57,10 +59,15 @@ kotlin {
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
             implementation(projects.shared)
+            implementation("com.squareup.okio:okio:${libs.versions.okio.version.get()}")
+            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(compose.preview)
+        }
+        wasmJsMain.dependencies {
+            implementation("com.squareup.okio:okio-wasm-js:${libs.versions.okio.version.get()}")
         }
     }
 }
