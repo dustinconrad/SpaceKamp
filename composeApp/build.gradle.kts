@@ -59,15 +59,16 @@ kotlin {
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
             implementation(projects.shared)
-            implementation("com.squareup.okio:okio:${libs.versions.okio.version.get()}")
+            implementation("com.russhwolf:multiplatform-settings:1.1.1")
             implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
+        }
+        desktopMain.dependencies {
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(compose.preview)
         }
         wasmJsMain.dependencies {
-            implementation("com.squareup.okio:okio-wasm-js:${libs.versions.okio.version.get()}")
         }
     }
 }
