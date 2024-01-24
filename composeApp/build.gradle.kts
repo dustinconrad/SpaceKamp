@@ -50,6 +50,7 @@ kotlin {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
             implementation(compose.preview)
+            implementation("androidx.preference:preference-ktx:1.2.1")
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -59,7 +60,8 @@ kotlin {
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
             implementation(projects.shared)
-            implementation("com.russhwolf:multiplatform-settings:1.1.1")
+            implementation(libs.kmp.settings)
+            //implementation(libs.kmp.settings.coroutines)
             implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
         }
         desktopMain.dependencies {
@@ -109,7 +111,7 @@ android {
 
 compose.desktop {
     application {
-        mainClass = "MainKt"
+        mainClass = "com.dustinconrad.spacekamp.MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
