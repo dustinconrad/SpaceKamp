@@ -6,6 +6,5 @@ import com.russhwolf.settings.StorageSettings
 
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
-    val settings = StorageSettings()
-    CanvasBasedWindow(canvasElementId = "ComposeTarget") { App(settings) }
+    CanvasBasedWindow(canvasElementId = "ComposeTarget") { App() }
 }

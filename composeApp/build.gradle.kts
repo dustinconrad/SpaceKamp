@@ -51,6 +51,7 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation(compose.preview)
             implementation("androidx.preference:preference-ktx:1.2.1")
+            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -64,7 +65,8 @@ kotlin {
             //implementation(libs.kmp.settings.coroutines)
             implementation("co.touchlab:kermit:2.0.3")
             implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
-
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
         }
         desktopMain.dependencies {
         }

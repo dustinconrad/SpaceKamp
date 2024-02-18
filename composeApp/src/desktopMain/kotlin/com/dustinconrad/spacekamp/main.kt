@@ -8,19 +8,13 @@ import com.russhwolf.settings.PreferencesSettings
 import java.util.prefs.Preferences
 
 fun main() = application {
-    val settings by lazy {
-        val preferences = Preferences.userRoot()
-        PreferencesSettings(preferences)
-    }
-
     Window(onCloseRequest = ::exitApplication, title = "SpaceKamp") {
-        App(settings)
+        App()
     }
 }
 
 @Preview
 @Composable
 fun AppDesktopPreview() {
-    val settings = PreferencesSettings(Preferences.userRoot())
-    App(settings)
+    App()
 }
