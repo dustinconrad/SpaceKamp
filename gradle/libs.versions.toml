@@ -19,6 +19,7 @@ ktor = "2.3.7"
 logback = "1.4.14"
 kmp-settings = "1.1.1"
 koin = "3.6.0-wasm-alpha2"
+kermit = "2.0.3"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -46,6 +47,8 @@ kmp-settings-coroutines = { module = "com.russhwolf:multiplatform-settings-corou
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin"}
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin"}
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin"}
+kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
+kermit-koin = { module = "co.touchlab:kermit-koin", version.ref = "kermit" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

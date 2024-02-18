@@ -63,7 +63,7 @@ kotlin {
             implementation(projects.shared)
             implementation(libs.kmp.settings)
             //implementation(libs.kmp.settings.coroutines)
-            implementation("co.touchlab:kermit:2.0.3")
+            implementation(libs.kermit)
             implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
