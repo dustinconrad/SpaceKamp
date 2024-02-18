@@ -19,5 +19,8 @@ fun main() = application {
 @Preview
 @Composable
 fun AppDesktopPreview() {
+    startKoin {
+        modules(appModule())
+    }
     App()
 }
