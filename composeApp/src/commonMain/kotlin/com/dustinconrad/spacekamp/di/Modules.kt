@@ -9,3 +9,5 @@ expect fun settingsPlatformModule(): Module
 val TokenModule = module {
     single { TokenRepository(get()) }
 }
+
+fun appModule() = listOf(settingsPlatformModule(), TokenModule)
