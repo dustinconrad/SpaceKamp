@@ -6,21 +6,23 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.preference.PreferenceManager
-import com.russhwolf.settings.SharedPreferencesSettings
+import com.dustinconrad.spacekamp.di.appModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.compose.KoinApplication
+import org.koin.core.context.startKoin
 
 class MainActivity : ComponentActivity() {
-
-    private val settings by lazy {
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(applicationContext)
-        SharedPreferencesSettings(sharedPrefs)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        startKoin {
+            androidContext(this@MainActivity)
+            modules(appModule())
+        }
+
         setContent {
-            App(settings)
+            App()
         }
     }
 }
@@ -28,6 +30,12 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun AppAndroidPreview() {
-    val settings = SharedPreferencesSettings(PreferenceManager.getDefaultSharedPreferences(LocalContext.current))
-    App(settings)
+    val context = LocalContext.current
+    KoinApplication(application = {
+        androidContext(context)
+        modules(appModule())
+    }) {
+        //    val settings = SharedPreferencesSettings(PreferenceManager.getDefaultSharedPreferences(LocalContext.current))
+        App()
+    }
 }
