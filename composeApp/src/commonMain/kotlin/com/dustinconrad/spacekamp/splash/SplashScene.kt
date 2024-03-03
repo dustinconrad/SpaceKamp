@@ -3,6 +3,7 @@ package com.dustinconrad.spacekamp.splash
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -23,7 +24,7 @@ fun SplashScene(
     onLoginToken: (Token?) -> Unit = {},
     tokenRepo: TokenRepository = koinInject()
 ) {
-    Column(Modifier.fillMaxWidth(),
+    Column(Modifier.fillMaxSize(),
            horizontalAlignment = Alignment.CenterHorizontally,
            verticalArrangement = Arrangement.Center) {
         Image(painterResource("compose-multiplatform.xml"), null)
