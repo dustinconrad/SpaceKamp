@@ -58,15 +58,16 @@ kotlin {
             implementation(compose.foundation)
             implementation(compose.material)
             implementation(compose.ui)
+            implementation(compose.animation)
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
             implementation(projects.shared)
             implementation(libs.kmp.settings)
-            //implementation(libs.kmp.settings.coroutines)
             implementation(libs.kermit)
             implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
+            implementation(libs.precompose)
         }
         desktopMain.dependencies {
         }
